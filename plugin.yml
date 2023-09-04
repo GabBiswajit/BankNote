@@ -1,0 +1,18 @@
+---
+main: Biswajit\BankNote\BankNote
+name: BankNote
+version: 1.0.0
+api: 5.0.0
+Author: Biswajit
+
+commands:
+  banknote:
+    description: banknote Permission
+    permission: BankNote.note.cmd
+    
+permissions:
+  BankNote.note.cmd:
+    description: Convert You Money To Note. 
+    default: true
+...
+￼Enter
