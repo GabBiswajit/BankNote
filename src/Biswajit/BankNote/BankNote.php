@@ -26,9 +26,9 @@ class BankNote extends PluginBase implements Listener{
                 libEco::myMoney($sender, function(float $money) use ($sender, $amount): void {
                 $playerName = $sender->getName();
                 if ($money < $amount) {
-                $sender->sendMessage("§cYou Don't Have Ignore More!");
+                $sender->sendMessage("§cYou Don't Have Ignore Money!");
                 }else{
-                libEco::reduceMoney($sender, $reduce, function() : void {});
+                libEco::reduceMoney($sender, $amount, function() : void {});
                 $item = VanillaItems::PAPER();
                 $item->setCustomName("§r§l§6$" . $amount . " §aBANK NOTE");
                 $item->setLore(["§r§7Right Click To Redeem This §aBank Note§7\n§r§7Withdrawn By §f" . $playerName . "\n§r§7Date »" . date("§f d/m/y") . "\n\n§r§7Value » §a$" . $amount]);
