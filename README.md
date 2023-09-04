@@ -1,2 +1,10 @@
-# BankNote
-A Bank Note Plugin For Pocketmine 5.0.0
+## BankNote
+Convert Your Money To Note.
+
+## Function
+- Multiple Economy.
+- Convert Your Money To Note.
+- No Config.
+
+## Command 
+- `/banknote {amount}`
