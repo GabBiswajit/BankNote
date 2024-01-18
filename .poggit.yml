@@ -7,7 +7,7 @@ projects:
     path: ""
     lint: false
     libs:
-      - src: davidglitch04\libEco
+      - src: David-pm-pl/libEco/libEco
         version: ^4.0.0
         branch: stable
 ...
