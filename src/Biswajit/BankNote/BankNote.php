@@ -22,7 +22,7 @@ class BankNote extends PluginBase implements Listener{
         if ($command->getName() === "banknote") {
             if (isset($args[0]) && is_numeric($args[0]) && $args[0] > 0) {
                 
-                $amount = (float) $args[0];
+                $amount = (int) $args[0];
                 libEco::myMoney($sender, function(float $money) use ($sender, $amount): void {
                 $playerName = $sender->getName();
                 if ($money < $amount) {
