@@ -70,7 +70,7 @@ class BankNote extends PluginBase implements Listener{
             case "written_book":
                 return VanillaItems::WRITTEN_BOOK();
             case "name_tag":
-                return VanillaItems::NAME_TAG();
+                return VanillaItems::PAPER(); // NAME_TAG doesn't exist in API 5, fallback to paper
             case "diamond":
                 return VanillaItems::DIAMOND();
             case "emerald":
@@ -359,13 +359,13 @@ class BankNote extends PluginBase implements Listener{
         }
         
         $nbt = $item->getNamedTag();
-        if (!$nbt->hasTag("BankNoteAmount")) {
+        if ($nbt->getTag("BankNoteAmount") === null) {
             return;
         }
         
         $this->cooldowns[$playerName] = $currentTime;
         
-        if (!$nbt->hasTag("BankNoteCreator") || !$nbt->hasTag("BankNoteDate")) {
+        if ($nbt->getTag("BankNoteCreator") === null || $nbt->getTag("BankNoteDate") === null) {
             $player->sendMessage(TextFormat::RED . "This banknote appears to be corrupted!");
             return;
         }
