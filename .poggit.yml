@@ -9,12 +9,9 @@ projects:
       phpstan: default
       compat: 8.0
     libs:
-      - src: cooldogedev/BedrockEconomy/BedrockEconomy
+      - src: cooldogepm/BedrockEconomy/BedrockEconomy
         version: ^2.1.0
         branch: main
-      - src: onebone/economyapi/EconomyAPI
-        version: ^2.0.7
-        branch: master
       - src: jojoe77777/FormAPI/FormAPI
         version: ^1.3.0
         branch: master
