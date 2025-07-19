@@ -9,9 +9,6 @@ projects:
       phpstan: default
       compat: 8.0
     libs:
-      - src: cooldogepm/BedrockEconomy/BedrockEconomy
-        version: ^2.1.0
-        branch: main
       - src: jojoe77777/FormAPI/FormAPI
         version: ^1.3.0
         branch: master
