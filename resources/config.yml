@@ -1,0 +1,72 @@
+# BankNote Plugin Configuration v2.0
+# Enhanced with StringToItemParser, FormAPI, and Multi-Economy Support
+
+banknote:
+  # Item configuration - supports any item via StringToItemParser
+  item:
+    # Use any valid item string (minecraft:paper, diamond, emerald_block, etc.)
+    type: "minecraft:paper"
+    # Custom item name format (use {amount} for placeholder)
+    name: "§r§l§6${amount} §aBAN§fK §aNOTE"
+    # Item lore (use {amount}, {creator}, {date} placeholders)
+    lore:
+      - "§r§7Right-click to redeem this §aBank Note"
+      - "§r§7Withdrawn by: §f{creator}"
+      - "§r§7Date: §f{date}"
+      - ""
+      - "§r§7Value: §a${amount}"
+      - "§r§8§oSecure banknote with anti-duplication"
+  
+  # Limits and restrictions
+  limits:
+    minimum: 1
+    maximum: 1000000
+    cooldown: 1 # seconds between redemptions to prevent spam
+
+# UI Configuration (requires FormAPI)
+ui:
+  title: "§l§aBankNote Manager"
+  enabled: true
+  # Custom amounts for quick selection in UI
+  quick_amounts:
+    - 100
+    - 500
+    - 1000
+    - 5000
+    - 10000
+    - 50000
+    - 100000
+
+# Economy Configuration - Auto-detection priority
+economy:
+  # Priority order: BedrockEconomy > EconomyAPI > others
+  auto_detect: true
+  # Force specific economy (bedrockeconomy, economyapi) - leave empty for auto
+  force_provider: ""
+
+# Security settings
+security:
+  # Prevent interaction with these blocks
+  blocked_interactions:
+    - "item_frame"
+    - "glow_item_frame"
+    - "chest"
+    - "ender_chest"
+  
+  # Enhanced validation
+  strict_validation: true
+  # Log suspicious activities
+  log_exploits: true
+
+# Supported items (examples - StringToItemParser supports any valid item)
+supported_items:
+  - "minecraft:paper"
+  - "minecraft:book"
+  - "minecraft:written_book"
+  - "minecraft:name_tag"
+  - "minecraft:diamond"
+  - "minecraft:emerald"
+  - "minecraft:gold_ingot"
+  - "minecraft:iron_ingot"
+  - "minecraft:nether_star"
+  - "minecraft:totem_of_undying"

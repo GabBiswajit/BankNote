@@ -1,17 +1,31 @@
 ---
-main: Biswajit\BankNote\BankNote
 name: BankNote
-version: 1.0.0
-api: 5.0.0
-Author: Biswajit
+main: Biswajit\BankNote\BankNote
+version: 2.0.0
+api: [5.0.0]
+author: Biswajit
+description: "Convert your money into secure banknotes with anti-duplication protection and configurable items"
+website: "https://github.com/GabBiswajit/BankNote"
+
+softdepend:
+  - BedrockEconomy
+  - EconomyAPI
+  - FormAPI
 
 commands:
   banknote:
-    description: banknote Permission
-    permission: BankNote.note.cmd
+    description: "Create or redeem banknotes"
+    usage: "/banknote [amount|ui]"
+    permission: banknote.use
+    aliases: ["bn", "note"]
     
 permissions:
-  BankNote.note.cmd:
-    description: Convert You Money To Note. 
+  banknote.use:
+    description: "Allows players to create and redeem banknotes"
     default: true
+  banknote.admin:
+    description: "Administrative permissions for banknote management"
+    default: op
+    children:
+      - banknote.use
 ...

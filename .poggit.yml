@@ -5,9 +5,17 @@ branches:
 projects:
   BankNote:
     path: ""
-    lint: false
+    lint:
+      phpstan: default
+      compat: 8.0
     libs:
-      - src: David-pm-pl/libEco/libEco
-        version: ^3.0.0
-        branch: stable
+      - src: cooldogedev/BedrockEconomy/BedrockEconomy
+        version: ^2.1.0
+        branch: main
+      - src: onebone/economyapi/EconomyAPI
+        version: ^2.0.7
+        branch: master
+      - src: jojoe77777/FormAPI/FormAPI
+        version: ^1.3.0
+        branch: master
 ...
